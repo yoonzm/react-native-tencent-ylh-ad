@@ -1,5 +1,5 @@
 {
-  "name": "react-native-tencent-ad",
+  "name": "react-native-tencent-gdt-ad",
   "version": "0.1.0",
   "description": "react-native 腾讯优量汇广告sdk",
   "main": "lib/commonjs/index",
