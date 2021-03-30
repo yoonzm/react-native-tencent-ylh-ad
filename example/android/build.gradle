@@ -8,6 +8,8 @@ buildscript {
         targetSdkVersion = 29
     }
     repositories {
+        maven{ url 'https://maven.aliyun.com/repository/releases' }
+        maven{ url "http://maven.aliyun.com/nexus/content/repositories/releases" }
         google()
         jcenter()
     }
@@ -22,6 +24,9 @@ buildscript {
 allprojects {
     repositories {
         mavenLocal()
+        maven{ url 'https://maven.aliyun.com/repository/releases' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven{ url "http://maven.aliyun.com/nexus/content/repositories/releases" }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url("$rootDir/../node_modules/react-native/android")

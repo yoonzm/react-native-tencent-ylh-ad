@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.reactnativetencentad"
+        applicationId "cn.swifthealth.patientApp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

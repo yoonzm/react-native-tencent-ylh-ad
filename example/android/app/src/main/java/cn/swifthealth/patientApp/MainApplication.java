@@ -1,4 +1,4 @@
-package com.example.reactnativetencentad;
+package cn.swifthealth.patientApp;
 
 import android.app.Application;
 import android.content.Context;
