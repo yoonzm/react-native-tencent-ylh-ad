@@ -34,7 +34,12 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "tencent",
+    "ad",
+    "ylh",
+    "优量汇",
+    "广告"
   ],
   "repository": "https://github.com/yoonzm/react-native-tencent-ad",
   "author": "yoonzm <yinzhim@gmail.com> (https://github.com/yoonzm)",

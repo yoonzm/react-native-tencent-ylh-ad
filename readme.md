@@ -5,18 +5,13 @@ react-native 腾讯优量汇广告sdk
 ## Installation
 
 ```sh
-npm install react-native-tencent-ad
+npm install react-native-tencent-ylh-ad
+yarn add react-native-tencent-ylh-ad
 ```
 
 ## Usage
 
-```js
-import TencentAd from "react-native-tencent-ad";
-
-// ...
-
-const result = await TencentAd.multiply(3, 7);
-```
+[example](./example/src/App.tsx)
 
 ## Contributing
 
