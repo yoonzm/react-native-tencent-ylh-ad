@@ -18,10 +18,10 @@ import RootSiblings from 'react-native-root-siblings';
 const SplashView = requireNativeComponent('SplashView');
 
 type Props = {
-  appInfo: {
-    appId: string;
-    posId: string;
-  };
+  /**
+   * 广告id
+   */
+  posId: string;
   /**
    *  请求广告条数据成功后调用
    *  详解:当接收服务器返回的广告数据成功后调用该函数

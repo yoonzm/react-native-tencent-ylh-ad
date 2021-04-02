@@ -2,8 +2,8 @@
 
 @interface RCT_EXTERN_MODULE(TencentAd, NSObject)
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(registerAppId:(NSString)appId
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject)
 
 @end

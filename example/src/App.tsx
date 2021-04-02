@@ -1,19 +1,35 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View, Button, Platform } from 'react-native';
 import TencentAd, { Splash, Banner } from 'react-native-tencent-ad';
 import config from '../config.json';
 
 export default function App() {
+  React.useEffect(() => {
+    TencentAd.registerAppId(config.appId)
+      .then(() => {
+        console.log('init success');
+      })
+      .catch(() => {
+        console.log('init fail');
+      });
+  });
+
   return (
     <View style={styles.container}>
       <Button
         title="开屏广告"
         onPress={() => {
           Splash.show({
-            appInfo: {
-              appId: config.appId,
-              posId: config.splashPosId,
+            posId:
+              Platform.OS === 'ios'
+                ? config.splashIosPosId
+                : config.splashPosId,
+            onDismissed: () => {
+              console.log('onDismissed');
+            },
+            onPresent: () => {
+              console.log('onPresent');
             },
           });
         }}
@@ -22,33 +38,26 @@ export default function App() {
         title="banner广告"
         onPress={() => {
           Banner.show({
-            appInfo: {
-              appId: config.appId,
-              posId: config.bannerPosId,
-            },
+            posId: config.bannerPosId,
           });
         }}
       />
       <Button
         title="插屏半屏"
         onPress={() => {
-          TencentAd.showInterstitialAD(
-            config.appId,
-            config.interstitialPosId,
-            false
-          );
+          TencentAd.showInterstitialAD(config.interstitialPosId, false);
         }}
       />
       <Button
         title="插屏全屏"
         onPress={() => {
-          TencentAd.showFullScreenAD(config.appId, config.fullScreenAdPosId);
+          TencentAd.showFullScreenAD(config.fullScreenAdPosId);
         }}
       />
       <Button
         title="H5激励视频广告"
         onPress={() => {
-          TencentAd.openWeb(config.appId, 'https://www.baidu.com', {});
+          TencentAd.openWeb('https://www.baidu.com', {});
         }}
       />
     </View>

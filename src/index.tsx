@@ -2,18 +2,22 @@ import { NativeModules } from 'react-native';
 
 type TencentAdType = {
   /**
+   * 初始化
+   * @param appId
+   */
+  registerAppId(appId: string): Promise<void>;
+  /**
    * 半屏广告
    */
-  showInterstitialAD(appID: string, posID: string, asPopup: boolean): void;
+  showInterstitialAD(posId: string, asPopup: boolean): void;
   /**
    * 全屏广告
    */
-  showFullScreenAD(appID: string, posID: string): void;
+  showFullScreenAD(posId: string): void;
   /**
    * H5-SDK激励视频广告
    */
   openWeb(
-    appID: string,
     url: string,
     settings: {
       titleBarHeight?: number; // 自定义标题栏高度，单位dp

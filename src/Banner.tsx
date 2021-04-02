@@ -18,10 +18,10 @@ import RootSiblings from 'react-native-root-siblings';
 const BannerView = requireNativeComponent('BannerView');
 
 type Props = {
-  appInfo: {
-    appId: string;
-    posId: string;
-  };
+  /**
+   * 广告id
+   */
+  posId: string;
   /**
    *  广告刷新间隔 [可选][30-120] 单位为 s, 0表示不自动轮播,默认30S
    */

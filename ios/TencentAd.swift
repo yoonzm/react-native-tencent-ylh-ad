@@ -1,8 +1,12 @@
 @objc(TencentAd)
 class TencentAd: NSObject {
-
-    @objc(multiply:withB:withResolver:withRejecter:)
-    func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        resolve(a*b)
+    @objc(registerAppId:resolve:reject:)
+    func registerAppId(appId: String, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
+        let result: Bool = GDTSDKConfig.registerAppId(appId);
+        if result {
+            resolve("")
+        } else {
+            reject("-1", "", nil)
+        }
     }
 }
