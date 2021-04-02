@@ -1,4 +1,4 @@
-package com.reactnativetencentad.view;
+package com.reactnativetencentylhad.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import com.qq.e.ads.banner2.UnifiedBannerView;
 import com.qq.e.ads.banner2.UnifiedBannerADListener;
 import com.qq.e.comm.managers.GDTADManager;
-import com.reactnativetencentad.R;
+import com.reactnativetencentylhad.R;
 
 /**
  * banner广告
@@ -17,11 +17,10 @@ public class Banner extends FrameLayout {
   private UnifiedBannerView mBanner;
   private Runnable mLayoutRunnable;
 
-  public Banner(Context context, String appID, String posID, UnifiedBannerADListener listener) {
+  public Banner(Context context, String posID, UnifiedBannerADListener listener) {
     super(context);
     // 把布局加载到这个View里面
     inflate(context, R.layout.layout_banner,this);
-    GDTADManager.getInstance().initWith(context, appID);
     initView(posID, listener);
   }
 

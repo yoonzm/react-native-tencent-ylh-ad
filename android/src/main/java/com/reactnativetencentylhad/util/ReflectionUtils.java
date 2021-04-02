@@ -1,4 +1,4 @@
-package com.reactnativetencentad.util;
+package com.reactnativetencentylhad.util;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;

@@ -1,5 +1,5 @@
-@objc(TencentAd)
-class TencentAd: NSObject {
+@objc(TencentYlhAd)
+class TencentYlhAd: NSObject {
     @objc(registerAppId:resolve:reject:)
     func registerAppId(appId: String, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) -> Void {
         let result: Bool = GDTSDKConfig.registerAppId(appId);

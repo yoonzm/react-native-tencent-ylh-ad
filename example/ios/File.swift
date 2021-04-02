@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  TencentAdExample
+//  TencentYlhAdExample
 //
 
 import Foundation

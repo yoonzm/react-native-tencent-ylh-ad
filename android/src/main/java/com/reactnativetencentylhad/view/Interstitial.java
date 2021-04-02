@@ -1,4 +1,4 @@
-package com.reactnativetencentad.view;
+package com.reactnativetencentylhad.view;
 
 import android.util.Log;
 
@@ -7,7 +7,6 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.WritableMap;
 import com.qq.e.ads.interstitial2.UnifiedInterstitialAD;
 import com.qq.e.ads.interstitial2.UnifiedInterstitialADListener;
-import com.qq.e.comm.managers.GDTADManager;
 import com.qq.e.comm.util.AdError;
 
 /**
@@ -89,11 +88,10 @@ public class Interstitial implements UnifiedInterstitialADListener {
     Log.e(TAG,"onADLeftApplication");
   }
 
-  public void showInterstitialAD(String appID, String posID, boolean fullScreen, boolean asPopup) {
+  public void showInterstitialAD(String posID, boolean fullScreen, boolean asPopup) {
     Log.e(TAG, "showInterstitialAD");
     this.asPopup = asPopup;
     this.fullScreen = fullScreen;
-    GDTADManager.getInstance().initWith(mContext, appID);
     UnifiedInterstitialAD iad = getIAD(posID);
     if (fullScreen) {
       iad.loadFullScreenAD();

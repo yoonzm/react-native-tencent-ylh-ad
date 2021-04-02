@@ -1,12 +1,14 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Button, Platform } from 'react-native';
-import TencentAd, { Splash, Banner } from 'react-native-tencent-ad';
+import TencentYlhAd, { Splash, Banner } from 'react-native-tencent-ylh-ad';
 import config from '../config.json';
+
+const platformConfig = config[Platform.OS as 'android' | 'ios'];
 
 export default function App() {
   React.useEffect(() => {
-    TencentAd.registerAppId(config.appId)
+    TencentYlhAd.registerAppId(config.appId)
       .then(() => {
         console.log('init success');
       })
@@ -21,16 +23,7 @@ export default function App() {
         title="开屏广告"
         onPress={() => {
           Splash.show({
-            posId:
-              Platform.OS === 'ios'
-                ? config.splashIosPosId
-                : config.splashPosId,
-            onDismissed: () => {
-              console.log('onDismissed');
-            },
-            onPresent: () => {
-              console.log('onPresent');
-            },
+            posId: platformConfig.splashPosId,
           });
         }}
       />
@@ -38,26 +31,29 @@ export default function App() {
         title="banner广告"
         onPress={() => {
           Banner.show({
-            posId: config.bannerPosId,
+            posId: platformConfig.bannerPosId,
           });
         }}
       />
       <Button
         title="插屏半屏"
         onPress={() => {
-          TencentAd.showInterstitialAD(config.interstitialPosId, false);
+          TencentYlhAd.showInterstitialAD(
+            platformConfig.interstitialPosId,
+            false
+          );
         }}
       />
       <Button
         title="插屏全屏"
         onPress={() => {
-          TencentAd.showFullScreenAD(config.fullScreenAdPosId);
+          TencentYlhAd.showFullScreenAD(platformConfig.fullScreenAdPosId);
         }}
       />
       <Button
         title="H5激励视频广告"
         onPress={() => {
-          TencentAd.openWeb('https://www.baidu.com', {});
+          TencentYlhAd.openWeb('https://www.baidu.com', {});
         }}
       />
     </View>

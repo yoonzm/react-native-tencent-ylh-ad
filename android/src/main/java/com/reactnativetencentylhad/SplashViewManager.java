@@ -1,4 +1,4 @@
-package com.reactnativetencentad;
+package com.reactnativetencentylhad;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.SimpleViewManager;
@@ -20,7 +19,7 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.google.gson.Gson;
 import com.qq.e.ads.splash.SplashADListener;
 import com.qq.e.comm.util.AdError;
-import com.reactnativetencentad.view.Splash;
+import com.reactnativetencentylhad.view.Splash;
 
 import java.util.Map;
 
@@ -155,12 +154,10 @@ public class SplashViewManager extends SimpleViewManager implements SplashADList
   // 该方法有两个参数，第一个参数是泛型View的实例对象，第二个参数是要设置的属性值。
   // 方法的返回值类型必须为void，而且访问控制必须被声明为public。
   // 组件的每一个属性的设置都会调用Java层被对应ReactProp注解的方法
-  @ReactProp(name = "appInfo")
-  public void setAppInfo(FrameLayout view, ReadableMap appInfo) {
-    String appID = appInfo.getString("appId");
-    String posID = appInfo.getString("posId");
+  @ReactProp(name = "posId")
+  public void setPosId(FrameLayout view, final String posId) {
     fetchSplashADTime = System.currentTimeMillis();
-    Splash splash = new Splash(mThemedReactContext.getCurrentActivity(), appID, posID, this);
+    Splash splash = new Splash(mThemedReactContext.getCurrentActivity(), posId, this);
     mSplash = splash;
     view.addView(splash);
   }

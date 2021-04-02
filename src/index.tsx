@@ -1,6 +1,6 @@
 import { NativeModules } from 'react-native';
 
-type TencentAdType = {
+type TencentYlhAdType = {
   /**
    * 初始化
    * @param appId
@@ -32,9 +32,9 @@ type TencentAdType = {
   ): void;
 };
 
-const { TencentAd } = NativeModules;
+const { TencentYlhAd } = NativeModules;
 
-export default TencentAd as TencentAdType;
+export default TencentYlhAd as TencentYlhAdType;
 
 export { default as Splash } from './Splash';
 export { default as Banner } from './Banner';

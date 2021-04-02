@@ -1,6 +1,6 @@
 {
   "name": "react-native-tencent-ylh-ad",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "react-native 腾讯优量汇广告sdk",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-tencent-ad.podspec",
+    "react-native-tencent-ylh-ad.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -34,12 +34,7 @@
   "keywords": [
     "react-native",
     "ios",
-    "android",
-    "tencent",
-    "ad",
-    "ylh",
-    "优量汇",
-    "广告"
+    "android"
   ],
   "repository": "https://github.com/yoonzm/react-native-tencent-ylh-ad",
   "author": "yoonzm <yinzhim@gmail.com> (https://github.com/yoonzm)",
@@ -103,7 +98,7 @@
       "publish": true
     },
     "github": {
-      "release": false
+      "release": true
     },
     "plugins": {
       "@release-it/conventional-changelog": {
@@ -156,6 +151,6 @@
     ]
   },
   "dependencies": {
-    "react-native-root-siblings": "3"
+    "react-native-root-siblings": "3.0.0"
   }
 }

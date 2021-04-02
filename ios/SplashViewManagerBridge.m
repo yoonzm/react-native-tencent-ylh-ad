@@ -1,6 +1,6 @@
 //
-//  SplashViewManagerBridge.m
-//  react-native-tencent-ad
+//  SplashViewManager.m
+//  react-native-tencent-ylh-ad
 //
 //  Created by swifthealth on 2021/4/2.
 //

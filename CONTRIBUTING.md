@@ -49,9 +49,9 @@ Remember to add tests for your change if possible. Run the unit tests by:
 yarn test
 ```
 
-To edit the Objective-C files, open `example/ios/TencentAdExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > react-native-tencent-ad`.
+To edit the Objective-C files, open `example/ios/TencentYlhAdExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > react-native-tencent-ylh-ad`.
 
-To edit the Kotlin files, open `example/android` in Android studio and find the source files at `reactnativetencentad` under `Android`.
+To edit the Kotlin files, open `example/android` in Android studio and find the source files at `reactnativetencentylhad` under `Android`.
 
 ### Commit message convention
 

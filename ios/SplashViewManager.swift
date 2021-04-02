@@ -1,6 +1,6 @@
 //
 //  SplashViewManager.swift
-//  react-native-tencent-ad
+//  react-native-tencent-ylh-ad
 //
 //  Created by swifthealth on 2021/4/2.
 //
@@ -80,3 +80,4 @@ class SplashView: UIView, GDTSplashAdDelegate {
         }
     }
 }
+

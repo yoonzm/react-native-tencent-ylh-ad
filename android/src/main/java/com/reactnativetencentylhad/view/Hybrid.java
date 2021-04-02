@@ -1,4 +1,4 @@
-package com.reactnativetencentad.view;
+package com.reactnativetencentylhad.view;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -13,7 +13,7 @@ import com.qq.e.ads.hybrid.HybridADListener;
 import com.qq.e.ads.hybrid.HybridADSetting;
 import com.qq.e.comm.managers.GDTADManager;
 import com.qq.e.comm.util.AdError;
-import com.reactnativetencentad.util.ReflectionUtils;
+import com.reactnativetencentylhad.util.ReflectionUtils;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -61,11 +61,10 @@ public class Hybrid implements HybridADListener {
     Toast.makeText(mContext.getCurrentActivity(), msg, Toast.LENGTH_LONG).show();
   }
 
-  public void openWeb(String appID, String url, ReadableMap settings) {
+  public void openWeb(String url, ReadableMap settings) {
     if (!TextUtils.isEmpty(url)) {
       HybridADSetting setting = fillHybridADSetting(settings);
       if (setting != null) {
-        GDTADManager.getInstance().initWith(mContext, appID);
         HybridAD hybridAD = new HybridAD(mContext, setting, this);
         hybridAD.loadUrl(url);
       }

@@ -1,8 +1,15 @@
 {
   "appId": "1111596416",
-  "splashPosId": "8041178186192260",
-  "splashIosPosId": "1081872216076021",
-  "bannerPosId": "7011671127717926",
-  "interstitialPosId": "7001277187052625",
-  "fullScreenAdPosId": "8091874198017789"
+  "ios": {
+    "splashPosId": "1081872216076021",
+    "bannerPosId": "7011671127717926",
+    "interstitialPosId": "7001277187052625",
+    "fullScreenAdPosId": "8091874198017789"
+  },
+  "android": {
+    "splashPosId": "8041178186192260",
+    "bannerPosId": "7011671127717926",
+    "interstitialPosId": "7001277187052625",
+    "fullScreenAdPosId": "8091874198017789"
+  }
 }

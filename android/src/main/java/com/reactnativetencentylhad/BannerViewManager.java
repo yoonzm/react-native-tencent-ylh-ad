@@ -1,4 +1,4 @@
-package com.reactnativetencentad;
+package com.reactnativetencentylhad;
 
 import android.util.Log;
 import android.view.View;
@@ -17,7 +17,7 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.google.gson.Gson;
 import com.qq.e.ads.banner2.UnifiedBannerADListener;
 import com.qq.e.comm.util.AdError;
-import com.reactnativetencentad.view.Banner;
+import com.reactnativetencentylhad.view.Banner;
 
 import java.util.Map;
 
@@ -132,11 +132,9 @@ public class BannerViewManager extends SimpleViewManager implements UnifiedBanne
   // 该方法有两个参数，第一个参数是泛型View的实例对象，第二个参数是要设置的属性值。
   // 方法的返回值类型必须为void，而且访问控制必须被声明为public。
   // 组件的每一个属性的设置都会调用Java层被对应ReactProp注解的方法
-  @ReactProp(name = "appInfo")
-  public void setAppInfo(FrameLayout view, final ReadableMap appInfo) {
-    String appID = appInfo.getString("appId");
-    String posID = appInfo.getString("posId");
-    Banner banner = new Banner(mThemedReactContext.getCurrentActivity(), appID, posID , this);
+  @ReactProp(name = "posId")
+  public void setPosId(FrameLayout view, final String posId) {
+    Banner banner = new Banner(mThemedReactContext.getCurrentActivity(), posId , this);
     mBanner = banner;
     view.addView(banner);
   }
