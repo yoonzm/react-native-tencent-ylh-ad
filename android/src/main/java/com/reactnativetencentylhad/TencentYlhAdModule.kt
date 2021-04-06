@@ -14,7 +14,7 @@ class TencentYlhAdModule(reactContext: ReactApplicationContext) : ReactContextBa
   }
 
   /**
-   * 半屏广告
+   * 初始化
    */
   @ReactMethod
   fun registerAppId(appId: String, promise: Promise) {
