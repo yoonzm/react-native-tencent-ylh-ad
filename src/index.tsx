@@ -38,3 +38,4 @@ export default TencentYlhAd as TencentYlhAdType;
 
 export { default as Splash } from './Splash';
 export { default as Banner } from './Banner';
+export { default as Flow } from './Flow';

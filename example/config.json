@@ -4,12 +4,14 @@
     "splashPosId": "1081872216076021",
     "bannerPosId": "7081170320984552",
     "interstitialPosId": "9081678361909524",
-    "fullScreenAdPosId": "7061579381003586"
+    "fullScreenAdPosId": "7061579381003586",
+    "flowAdPosId": "2091175341761744"
   },
   "android": {
     "splashPosId": "8041178186192260",
     "bannerPosId": "7011671127717926",
     "interstitialPosId": "7001277187052625",
-    "fullScreenAdPosId": "8091874198017789"
+    "fullScreenAdPosId": "8091874198017789",
+    "flowAdPosId": "8091874198017789"
   }
 }

@@ -1,7 +1,11 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Button, Platform } from 'react-native';
-import TencentYlhAd, { Splash, Banner } from 'react-native-tencent-ylh-ad';
+import TencentYlhAd, {
+  Splash,
+  Banner,
+  Flow,
+} from 'react-native-tencent-ylh-ad';
 import config from '../config.json';
 
 const platformConfig = config[Platform.OS as 'android' | 'ios'];
@@ -54,6 +58,14 @@ export default function App() {
         title="H5激励视频广告"
         onPress={() => {
           TencentYlhAd.openWeb('https://www.baidu.com', {});
+        }}
+      />
+      <Button
+        title="信息流广告"
+        onPress={() => {
+          Flow.show({
+            posId: platformConfig.flowAdPosId,
+          });
         }}
       />
     </View>

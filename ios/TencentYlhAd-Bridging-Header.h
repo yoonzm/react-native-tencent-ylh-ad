@@ -4,4 +4,6 @@
 #import <GDTMobSDK/GDTUnifiedBannerView.h>
 #import <GDTMobSDK/GDTUnifiedInterstitialAd.h>
 #import <GDTMobSDK/GDTHybridAd.h>
+#import <GDTMobSDK/GDTNativeExpressProAdManager.h>
+#import <GDTMobSDK/GDTNativeExpressProAdView.h>
 #import <GDTMobSDK/GDTSDKConfig.h>
