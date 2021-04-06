@@ -13,7 +13,8 @@ class TencentYlhAdPackage : ReactPackage {
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
         return listOf(
           SplashViewManager(),
-          BannerViewManager()
+          BannerViewManager(),
+          NativeExpressViewManager()
         )
     }
 }

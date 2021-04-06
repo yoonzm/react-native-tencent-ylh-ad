@@ -1,6 +1,13 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Button, Platform } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Platform,
+  Text,
+  GestureResponderEvent,
+} from 'react-native';
 import TencentYlhAd, {
   Splash,
   Banner,
@@ -9,6 +16,37 @@ import TencentYlhAd, {
 import config from '../config.json';
 
 const platformConfig = config[Platform.OS as 'android' | 'ios'];
+
+function Button({
+  title,
+  onPress,
+}: {
+  title: string;
+  onPress: (event: GestureResponderEvent) => void;
+}) {
+  return (
+    <TouchableOpacity
+      style={{
+        height: 50,
+        width: '100%',
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        marginTop: 10,
+      }}
+      onPress={onPress}
+    >
+      <Text
+        style={{
+          color: 'white',
+        }}
+      >
+        {title}
+      </Text>
+    </TouchableOpacity>
+  );
+}
 
 export default function App() {
   React.useEffect(() => {
