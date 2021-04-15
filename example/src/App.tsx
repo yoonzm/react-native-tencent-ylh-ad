@@ -11,7 +11,7 @@ import {
 import TencentYlhAd, {
   Splash,
   Banner,
-  Flow,
+  NativeExpress,
 } from 'react-native-tencent-ylh-ad';
 import config from '../config.json';
 
@@ -101,7 +101,7 @@ export default function App() {
       <Button
         title="信息流广告"
         onPress={() => {
-          Flow.show({
+          NativeExpress.show({
             posId: platformConfig.flowAdPosId,
           });
         }}

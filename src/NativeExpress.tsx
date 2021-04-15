@@ -3,7 +3,7 @@
  * @Author: yoon
  * @Date: 2021/3/30
  * @Time: 下午3:20
- * @Desc: banner广告
+ * @Desc: 原生广告
  */
 
 import React, { PureComponent } from 'react';
@@ -48,7 +48,11 @@ type Props = {
   onRender?: Function;
 } & ViewProps;
 
-export default class Flow extends PureComponent<Props> {
+type State = {
+  remove: boolean;
+};
+
+export default class NativeExpress extends PureComponent<Props, State> {
   /**
    * 静态调用
    */
@@ -57,7 +61,7 @@ export default class Flow extends PureComponent<Props> {
       (
         <ScrollView style={styles.container}>
           {[...new Array(10)].map(() => (
-            <Flow
+            <NativeExpress
               {...options}
               onViewWillClose={() => {
                 options.onViewWillClose && options.onViewWillClose();
@@ -71,6 +75,13 @@ export default class Flow extends PureComponent<Props> {
   }
 
   instance: any;
+
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      remove: false,
+    };
+  }
 
   _onFailToReceived(event: any) {
     this.props.onFailToReceived &&
@@ -89,7 +100,18 @@ export default class Flow extends PureComponent<Props> {
     this.props.onRender && this.props.onRender(event.nativeEvent);
   }
 
+  _onViewWillClose() {
+    this.setState({
+      remove: true,
+    });
+    this.props.onViewWillClose && this.props.onViewWillClose();
+  }
+
   render() {
+    if (this.state.remove) {
+      return null;
+    }
+
     return (
       <NativeExpressView
         {...this.props}
@@ -99,6 +121,7 @@ export default class Flow extends PureComponent<Props> {
         // @ts-ignore
         onFailToReceived={this._onFailToReceived.bind(this)}
         onRender={this._onRender.bind(this)}
+        onViewWillClose={this._onViewWillClose.bind(this)}
       />
     );
   }
