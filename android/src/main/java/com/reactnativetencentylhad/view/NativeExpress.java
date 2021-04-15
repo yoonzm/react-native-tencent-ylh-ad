@@ -1,13 +1,12 @@
 package com.reactnativetencentylhad.view;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.Log;
-import android.widget.Button;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
@@ -84,7 +83,6 @@ public class NativeExpress extends FrameLayout implements NativeExpressAD2.AdLoa
 
   @Override
   protected void onDetachedFromWindow() {
-    closeNativeExpress();
     super.onDetachedFromWindow();
   }
 
@@ -145,6 +143,15 @@ public class NativeExpress extends FrameLayout implements NativeExpressAD2.AdLoa
     if (mExpressADData2.getAdView() != null) {
       removeAllViews();
       addView(mExpressADData2.getAdView());
+      mExpressADData2.getAdView().addOnLayoutChangeListener(new OnLayoutChangeListener() {
+        @Override
+        public void onLayoutChange(View view, int i, int i1, int i2, int i3, int i4, int i5, int i6, int i7) {
+          WritableMap arguments = Arguments.createMap();
+          arguments.putInt("height", view.getHeight());
+          arguments.putInt("width", view.getWidth());
+          mEventEmitter.receiveEvent(mContainer.getId(), NativeExpressViewManager.Events.EVENT_ON_RENDER.toString(), arguments);
+        }
+      });
     }
   }
 

@@ -7,7 +7,13 @@
  */
 
 import React, { PureComponent } from 'react';
-import { requireNativeComponent, StyleSheet, ViewProps } from 'react-native';
+import {
+  requireNativeComponent,
+  StyleSheet,
+  ViewProps,
+  ScrollView,
+  Dimensions,
+} from 'react-native';
 import RootSiblings from 'react-native-root-siblings';
 
 const NativeExpressView = requireNativeComponent('NativeExpressView');
@@ -36,6 +42,10 @@ type Props = {
    *  点击回调
    */
   onClicked?: Function;
+  /**
+   *  渲染完成
+   */
+  onRender?: Function;
 } & ViewProps;
 
 export default class Flow extends PureComponent<Props> {
@@ -45,29 +55,50 @@ export default class Flow extends PureComponent<Props> {
   static show(options: Props) {
     const sibling = new RootSiblings(
       (
-        <Flow
-          style={styles.container}
-          {...options}
-          onViewWillClose={() => {
-            options.onViewWillClose && options.onViewWillClose();
-            sibling.destroy();
-          }}
-        />
+        <ScrollView style={styles.container}>
+          {[...new Array(10)].map(() => (
+            <Flow
+              {...options}
+              onViewWillClose={() => {
+                options.onViewWillClose && options.onViewWillClose();
+                sibling.destroy();
+              }}
+            />
+          ))}
+        </ScrollView>
       )
     );
   }
+
+  instance: any;
 
   _onFailToReceived(event: any) {
     this.props.onFailToReceived &&
       this.props.onFailToReceived(new Error(event.nativeEvent.error));
   }
 
+  _onRender(event: any) {
+    const { width } = event.nativeEvent;
+    const screenWith = Dimensions.get('window').width;
+    this.instance.setNativeProps({
+      style: {
+        width: screenWith,
+        height: (event.nativeEvent.height * screenWith) / width,
+      },
+    });
+    this.props.onRender && this.props.onRender(event.nativeEvent);
+  }
+
   render() {
     return (
       <NativeExpressView
         {...this.props}
+        ref={(ref) => {
+          this.instance = ref;
+        }}
         // @ts-ignore
         onFailToReceived={this._onFailToReceived.bind(this)}
+        onRender={this._onRender.bind(this)}
       />
     );
   }
@@ -75,7 +106,7 @@ export default class Flow extends PureComponent<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    width: 375,
+    width: '100%',
     position: 'absolute',
     top: 0,
     bottom: 0,

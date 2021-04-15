@@ -40,6 +40,7 @@ public class NativeExpressViewManager extends SimpleViewManager {
     EVENT_WILL_LEAVE_APP("onViewWillLeaveApplication"),
     EVENT_WILL_CLOSE("onViewWillClose"),
     EVENT_WILL_EXPOSURE("onViewWillExposure"),
+    EVENT_ON_RENDER("onRender"),
     EVENT_ON_CLICK("onClicked"),
     EVENT_WILL_OPEN_FULL_SCREEN("onViewWillPresentFullScreenModal"),
     EVENT_DID_OPEN_FULL_SCREEN("onViewDidPresentFullScreenModal"),
