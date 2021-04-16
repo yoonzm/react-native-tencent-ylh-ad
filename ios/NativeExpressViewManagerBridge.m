@@ -16,5 +16,6 @@ RCT_EXPORT_VIEW_PROPERTY(onReceived, RCTBubblingEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onFailToReceived, RCTBubblingEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onViewWillClose, RCTBubblingEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onClicked, RCTBubblingEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onRender, RCTBubblingEventBlock);
 
 @end

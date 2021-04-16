@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		5E555C0D2413F4C50049A1A2 /* TencentYlhAd.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* TencentYlhAd.m */; };
-		F4FF95D7245B92E800C19C63 /*  TencentYlhAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  TencentYlhAd.swift */; };
-
+		3983BA4A262970B100F1A350 /* BannerViewManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3983BA41262970B000F1A350 /* BannerViewManagerBridge.m */; };
+		3983BA4B262970B100F1A350 /* SplashViewManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3983BA42262970B000F1A350 /* SplashViewManagerBridge.m */; };
+		3983BA4C262970B100F1A350 /* Hybrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983BA43262970B000F1A350 /* Hybrid.swift */; };
+		3983BA4D262970B100F1A350 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983BA44262970B000F1A350 /* Interstitial.swift */; };
+		3983BA4E262970B100F1A350 /* BannerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983BA45262970B000F1A350 /* BannerViewManager.swift */; };
+		3983BA4F262970B100F1A350 /* SplashViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983BA46262970B100F1A350 /* SplashViewManager.swift */; };
+		3983BA50262970B100F1A350 /* NativeExpressViewManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3983BA47262970B100F1A350 /* NativeExpressViewManagerBridge.m */; };
+		3983BA51262970B100F1A350 /* TencentYlhAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983BA48262970B100F1A350 /* TencentYlhAd.swift */; };
+		3983BA52262970B100F1A350 /* NativeExpressViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3983BA49262970B100F1A350 /* NativeExpressViewManager.swift */; };
+		399168A026285DA900FAB710 /* TencentYlhAd.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* TencentYlhAd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,11 +33,18 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libTencentYlhAd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTencentYlhAd.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
+		3983B9AE26296C1900F1A350 /* TencentYlhAd-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TencentYlhAd-Bridging-Header.h"; sourceTree = "<group>"; };
+		3983BA41262970B000F1A350 /* BannerViewManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewManagerBridge.m; sourceTree = "<group>"; };
+		3983BA42262970B000F1A350 /* SplashViewManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewManagerBridge.m; sourceTree = "<group>"; };
+		3983BA43262970B000F1A350 /* Hybrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hybrid.swift; sourceTree = "<group>"; };
+		3983BA44262970B000F1A350 /* Interstitial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
+		3983BA45262970B000F1A350 /* BannerViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewManager.swift; sourceTree = "<group>"; };
+		3983BA46262970B100F1A350 /* SplashViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewManager.swift; sourceTree = "<group>"; };
+		3983BA47262970B100F1A350 /* NativeExpressViewManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeExpressViewManagerBridge.m; sourceTree = "<group>"; };
+		3983BA48262970B100F1A350 /* TencentYlhAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TencentYlhAd.swift; sourceTree = "<group>"; };
+		3983BA49262970B100F1A350 /* NativeExpressViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeExpressViewManager.swift; sourceTree = "<group>"; };
+		39E741B326296124002CC76A /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGDTMobSDK.a; path = ../../../ios/Pods/GDTMobSDK/lib/libGDTMobSDK.a; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* TencentYlhAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TencentYlhAd.m; sourceTree = "<group>"; };
-		F4FF95D5245B92E700C19C63 /* TencentYlhAd-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TencentYlhAd-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4FF95D6245B92E800C19C63 /* TencentYlhAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TencentYlhAd.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,15 +66,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		39E73D2726293AB4002CC76A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39E741B326296124002CC76A /* libGDTMobSDK.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-
-				F4FF95D6245B92E800C19C63 /* TencentYlhAd.swift */,
+				3983BA45262970B000F1A350 /* BannerViewManager.swift */,
+				3983BA41262970B000F1A350 /* BannerViewManagerBridge.m */,
+				3983BA43262970B000F1A350 /* Hybrid.swift */,
+				3983BA44262970B000F1A350 /* Interstitial.swift */,
+				3983BA49262970B100F1A350 /* NativeExpressViewManager.swift */,
+				3983BA47262970B100F1A350 /* NativeExpressViewManagerBridge.m */,
+				3983BA46262970B100F1A350 /* SplashViewManager.swift */,
+				3983BA42262970B000F1A350 /* SplashViewManagerBridge.m */,
+				3983BA48262970B100F1A350 /* TencentYlhAd.swift */,
+				3983B9AE26296C1900F1A350 /* TencentYlhAd-Bridging-Header.h */,
 				B3E7B5891CC2AC0600A0062D /* TencentYlhAd.m */,
-				F4FF95D5245B92E700C19C63 /* TencentYlhAd-Bridging-Header.h */,
-
 				134814211AA4EA7D00B7C361 /* Products */,
+				39E73D2726293AB4002CC76A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,10 +150,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-				F4FF95D7245B92E800C19C63 /* TencentYlhAd.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* TencentYlhAd.m in Sources */,
-
+				399168A026285DA900FAB710 /* TencentYlhAd.m in Sources */,
+				3983BA4F262970B100F1A350 /* SplashViewManager.swift in Sources */,
+				3983BA4D262970B100F1A350 /* Interstitial.swift in Sources */,
+				3983BA4E262970B100F1A350 /* BannerViewManager.swift in Sources */,
+				3983BA52262970B100F1A350 /* NativeExpressViewManager.swift in Sources */,
+				3983BA4C262970B100F1A350 /* Hybrid.swift in Sources */,
+				3983BA4B262970B100F1A350 /* SplashViewManagerBridge.m in Sources */,
+				3983BA51262970B100F1A350 /* TencentYlhAd.swift in Sources */,
+				3983BA50262970B100F1A350 /* NativeExpressViewManagerBridge.m in Sources */,
+				3983BA4A262970B100F1A350 /* BannerViewManagerBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,20 +263,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../ios/Pods/Headers/Public/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TencentYlhAd;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "TencentYlhAd-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Debug;
 		};
@@ -250,19 +281,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../../ios/Pods/Headers/Public/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TencentYlhAd;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "TencentYlhAd-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Release;
 		};

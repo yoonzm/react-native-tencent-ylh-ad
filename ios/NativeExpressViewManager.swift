@@ -32,6 +32,7 @@ class NativeExpressView: UIView, GDTNativeExpressProAdManagerDelegate, GDTNative
     @objc var onFailToReceived: RCTBubblingEventBlock?
     @objc var onViewWillClose: RCTBubblingEventBlock?
     @objc var onClicked: RCTBubblingEventBlock?
+    @objc var onRender: RCTBubblingEventBlock?
     
     @objc var posId: String = "" {
         didSet {
@@ -83,6 +84,20 @@ class NativeExpressView: UIView, GDTNativeExpressProAdManagerDelegate, GDTNative
         print(#function)
         if self.onClicked != nil {
             self.onClicked!(nil)
+        }
+    }
+    
+    func gdt_NativeExpressProAdViewRenderSuccess(_ nativeExpressProAdView: GDTNativeExpressProAdView) {
+        print(#function)
+        if self.onRender != nil {
+            if #available(iOS 9.0, *) {
+                self.onRender!([
+                    "width": nativeExpressProAdView.frame.width,
+                    "height": nativeExpressProAdView.frame.height,
+                ])
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }
