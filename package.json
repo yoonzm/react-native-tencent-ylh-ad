@@ -1,6 +1,6 @@
 {
   "name": "react-native-tencent-ylh-ad",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "react-native 腾讯优量汇广告sdk",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
