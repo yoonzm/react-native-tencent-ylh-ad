@@ -7,12 +7,11 @@
  */
 
 import React, { PureComponent } from 'react';
-import { requireNativeComponent, StyleSheet, ViewProps } from 'react-native';
-import RootSiblings from 'react-native-root-siblings';
+import { requireNativeComponent, ViewProps } from 'react-native';
 
 const BannerView = requireNativeComponent('BannerView');
 
-type Props = {
+export type Props = {
   /**
    * 广告id
    */
@@ -68,24 +67,6 @@ type Props = {
 } & ViewProps;
 
 export default class Banner extends PureComponent<Props> {
-  /**
-   * 静态调用
-   */
-  static show(options: Props) {
-    let sibling = new RootSiblings(
-      (
-        <Banner
-          style={styles.container}
-          {...options}
-          onViewWillClose={() => {
-            options.onViewWillClose && options.onViewWillClose();
-            sibling.destroy();
-          }}
-        />
-      )
-    );
-  }
-
   _onFailToReceived(event: any) {
     this.props.onFailToReceived &&
       this.props.onFailToReceived(new Error(event.nativeEvent.error));
@@ -101,16 +82,3 @@ export default class Banner extends PureComponent<Props> {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: 375 / 6.4, // Banner 规定banner宽高比应该为6.4:1 , 开发者可自行设置符合规定宽高比的具体宽度和高度值
-    width: '100%',
-    position: 'absolute',
-    bottom: 100,
-    left: 0,
-    right: 0,
-    zIndex: 10,
-    overflow: 'hidden',
-  },
-});

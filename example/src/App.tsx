@@ -8,12 +8,9 @@ import {
   Text,
   GestureResponderEvent,
 } from 'react-native';
-import TencentYlhAd, {
-  Splash,
-  Banner,
-  NativeExpress,
-} from 'react-native-tencent-ylh-ad';
+import TencentYlhAd, { Splash } from 'react-native-tencent-ylh-ad';
 import config from '../config.json';
+import { showBanner, showNativeExpress } from './ExampleBuilder';
 
 const platformConfig = config[Platform.OS as 'android' | 'ios'];
 
@@ -32,7 +29,7 @@ function Button({
         borderRadius: 8,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        backgroundColor: '#888',
         marginTop: 10,
       }}
       onPress={onPress}
@@ -66,14 +63,31 @@ export default function App() {
         onPress={() => {
           Splash.show({
             posId: platformConfig.splashPosId,
+            onPresent: () => {
+              console.log('Splash.onPresent()');
+            },
+            onFailToReceived: (err: any) => {
+              console.log('Splash.onFailToReceived()', err);
+            },
+            onNextAction: () => {
+              console.log('Splash.onNextAction()');
+            },
           });
         }}
       />
       <Button
         title="banner广告"
         onPress={() => {
-          Banner.show({
+          showBanner({
             posId: platformConfig.bannerPosId,
+          });
+        }}
+      />
+      <Button
+        title="信息流广告"
+        onPress={() => {
+          showNativeExpress({
+            posId: platformConfig.flowAdPosId,
           });
         }}
       />
@@ -98,14 +112,6 @@ export default function App() {
           TencentYlhAd.openWeb('https://www.baidu.com', {});
         }}
       />
-      <Button
-        title="信息流广告"
-        onPress={() => {
-          NativeExpress.show({
-            posId: platformConfig.flowAdPosId,
-          });
-        }}
-      />
     </View>
   );
 }
@@ -115,5 +121,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 15,
   },
 });

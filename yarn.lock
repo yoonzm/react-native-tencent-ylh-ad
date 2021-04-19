@@ -7855,11 +7855,12 @@ react-native-builder-bob@^0.18.0:
   optionalDependencies:
     jetifier "^1.6.6"
 
-react-native-root-siblings@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/react-native-root-siblings/download/react-native-root-siblings-3.0.0.tgz#049f584f83ec5c18f16c5cfe1ef9aada26f685bf"
-  integrity sha1-BJ9YT4PsXBjxbFz+Hvmq2ib2hb8=
+react-native-root-siblings@3.2.3:
+  version "3.2.3"
+  resolved "https://registry.npm.taobao.org/react-native-root-siblings/download/react-native-root-siblings-3.2.3.tgz#df5a1cff3a3a1f433f57320e1cae719f1b15a3f2"
+  integrity sha1-31oc/zo6H0M/VzIOHK5xnxsVo/I=
   dependencies:
+    prop-types "^15.6.2"
     static-container "^1.0.0"
 
 react-native@0.63.4:

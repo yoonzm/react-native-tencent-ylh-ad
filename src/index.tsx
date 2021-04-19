@@ -37,5 +37,8 @@ const { TencentYlhAd } = NativeModules;
 export default TencentYlhAd as TencentYlhAdType;
 
 export { default as Splash } from './Splash';
-export { default as Banner } from './Banner';
-export { default as NativeExpress } from './NativeExpress';
+export { default as Banner, Props as BannerProps } from './Banner';
+export {
+  default as NativeExpress,
+  Props as NativeExpressProps,
+} from './NativeExpress';

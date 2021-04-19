@@ -7,18 +7,11 @@
  */
 
 import React, { PureComponent } from 'react';
-import {
-  requireNativeComponent,
-  StyleSheet,
-  ViewProps,
-  ScrollView,
-  Dimensions,
-} from 'react-native';
-import RootSiblings from 'react-native-root-siblings';
+import { requireNativeComponent, ViewProps, Dimensions } from 'react-native';
 
 const NativeExpressView = requireNativeComponent('NativeExpressView');
 
-type Props = {
+export type Props = {
   /**
    * 广告id
    */
@@ -53,27 +46,6 @@ type State = {
 };
 
 export default class NativeExpress extends PureComponent<Props, State> {
-  /**
-   * 静态调用
-   */
-  static show(options: Props) {
-    const sibling = new RootSiblings(
-      (
-        <ScrollView style={styles.container}>
-          {[...new Array(10)].map(() => (
-            <NativeExpress
-              {...options}
-              onViewWillClose={() => {
-                options.onViewWillClose && options.onViewWillClose();
-                sibling.destroy();
-              }}
-            />
-          ))}
-        </ScrollView>
-      )
-    );
-  }
-
   instance: any;
 
   constructor(props: Props) {
@@ -126,16 +98,3 @@ export default class NativeExpress extends PureComponent<Props, State> {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    zIndex: 10,
-    backgroundColor: '#000',
-  },
-});

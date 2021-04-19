@@ -85,22 +85,28 @@ export default class Splash extends PureComponent<Props> {
         <Splash
           style={styles.container}
           {...options}
-          onDismissed={() => {
-            options.onDismissed && options.onDismissed();
+          onNextAction={(e: any) => {
+            // @ts-ignore
             sibling.destroy();
+            options.onNextAction && options.onNextAction(e);
           }}
         />
       )
     );
   }
 
+  componentWillUnmount() {
+    StatusBar.setHidden(false);
+  }
+
   _onFailToReceived(event: any) {
     this.props.onFailToReceived &&
-      this.props.onFailToReceived(new Error(event.nativeEvent.error));
+      this.props.onFailToReceived(event.nativeEvent.error);
   }
 
   render() {
     StatusBar.setHidden(true);
+
     return (
       <SplashView
         {...this.props}
@@ -121,5 +127,6 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     zIndex: 10,
+    backgroundColor: '#000',
   },
 });
