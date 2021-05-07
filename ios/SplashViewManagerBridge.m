@@ -15,5 +15,6 @@ RCT_EXPORT_VIEW_PROPERTY(posId, NSString)
 RCT_EXPORT_VIEW_PROPERTY(onDismissed, RCTBubblingEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onPresent, RCTBubblingEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onFailToReceived, RCTBubblingEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onNextAction, RCTBubblingEventBlock);
 
 @end

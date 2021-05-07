@@ -30,6 +30,7 @@ class SplashView: UIView, GDTSplashAdDelegate {
     @objc var onDismissed: RCTBubblingEventBlock?
     @objc var onPresent: RCTBubblingEventBlock?
     @objc var onFailToReceived: RCTBubblingEventBlock?
+    @objc var onNextAction: RCTBubblingEventBlock?
     
     @objc var posId: String = "" {
         didSet {
@@ -48,11 +49,18 @@ class SplashView: UIView, GDTSplashAdDelegate {
         }
     }
     
+    func nextAction() -> Void {
+        if self.onNextAction != nil {
+            self.onNextAction!(nil)
+        }
+    }
+    
     func splashAdClosed(_ splashAd: GDTSplashAd!) {
         print(#function)
         if self.onDismissed != nil {
             self.onDismissed!(nil)
         }
+        self.nextAction();
     }
     
     func splashAdDidLoad(_ splashAd: GDTSplashAd!) {
@@ -78,6 +86,7 @@ class SplashView: UIView, GDTSplashAdDelegate {
         if self.onFailToReceived != nil {
             self.onFailToReceived!(nil)
         }
+        self.nextAction();
     }
 }
 
